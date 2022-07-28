@@ -1,3 +1,15 @@
+/* Variaveis */
+
+:root {
+    --branco: #fff;
+    --azul-principal: #138ecc;
+    --azul-detalhe: #0f79af;
+    --cinza: #425265;
+    --cinza-detalhe: #2d3846;
+}
+
+/* Reset e body */
+
 * {
     margin: 0;
     padding: 0;
@@ -8,8 +20,168 @@
 }
 
 body {
-    background: url(./img/background.jpg) no-repeat;
+    background: url(./img/background-1.jpg) no-repeat;
     background-size: cover;
     overflow: hidden;
-    min-height: 100vh;
+    max-height: 100vh;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 48px;
+}
+
+header .logo {
+    width: 150px;
+}
+
+.navigation ul {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.navigation ul li a {
+    color: var(--branco);
+    font-size: 18px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: all .6s;
+}
+
+.navigation ul li a:hover {
+    border-bottom: 2px solid var(--azul-principal);
+}
+
+.navigation .search {
+    width: 22px;
+    cursor: pointer;
+    filter: invert(1);
+    transition: all .3s;
+}
+
+.navigation .search:hover {
+    transform: scale(1.5);
+}
+
+.navigation .profile {
+    width: 40px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.navigation .profile:hover {
+    transform: scale(1.5);
+}
+
+/* Main */
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 50em;
+    margin-top: 1.5em;
+}
+
+main section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 2.5em;
+}
+
+main section .logoLotr {
+    width: 35em;
+    margin: 3em 0;
+}
+
+main section .btn-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-box .btn {
+    padding: 20px 45px;
+    background: var(--cinza);
+    color: var(--branco);
+    margin-bottom: 2em;
+    border-bottom: 2px solid var(--branco);
+    transition: all .3s;
+}
+
+.btn-box .btn:hover {
+    background: var(--cinza-detalhe);
+}
+
+.btn-box .btn:focus {
+    background: var(--cinza-detalhe);
+}
+
+section .sinopse {
+    line-height: 22px;
+    color: var(--branco);
+}
+
+.controls-box {
+    display: flex;
+    align-items: center;
+    color: var(--branco);
+    background: var(--azul-detalhe);
+    padding: 15px 45px;
+    margin-top: 2em;
+    border-radius: 5px 5px 0 0 ;
+    border-bottom: 4px solid var(--branco);
+    font-size: 25px;
+    gap: 15px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.controls-box:hover {
+    background: var(--azul-principal);
+}
+
+.controls-box .btn-play {
+    width: 1.4em;
+    filter: invert(1);
+}
+
+/* Footer e Cards */
+
+footer .cards {
+    display: flex;
+    align-items: center;
+    flex-flow: row;
+    margin-left: 23em;
+    margin-top: 1.5em;
+}
+
+footer .cards .card {
+    height: 180px;
+    max-width: 300px;
+    box-shadow: 12px 0 32px 2px black;
+    margin-left: -120px;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+    overflow: hidden;
+}
+
+footer .cards .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+footer .cards .card:hover {
+    transform: translateY(-16px) rotate(3deg) scale(1.5);
+}
+
+footer .cards .card:hover ~ .card {
+    transform: translateX(60%);
 }
